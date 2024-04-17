@@ -7,7 +7,7 @@ public class Main {
 
         LoginView loginView = new LoginView();
         //UserManager userManager = new UserManager();
-        //AdminView adminView = new AdminView(userManager.findByLogin("goksu","1234"));
+        //AdminView adminView = new AdminView(userManager.findByLogin("Goksu","4321"));
 
 
 
