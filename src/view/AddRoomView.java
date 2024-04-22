@@ -36,11 +36,12 @@ public class AddRoomView extends Layout {
     private HotelManager hotelManager;
     private SeasonManager seasonManager;
     private PensionManager pensionManager;
+    private RoomManager roomManager;
     private ComboItem comboItem;
     private Hotel hotel;
     private Room room;
     private Season season;
-    private RoomManager roomManager;
+
 
 
     public AddRoomView() {
@@ -119,7 +120,7 @@ public class AddRoomView extends Layout {
                     }
                     if(result){
                         Helper.showMsg("done");
-                        /*employeeGUI.loadReservationTable();*/
+                        /*employeeView.loadReservationTable();*/
 
                         dispose();
                     }else{

@@ -91,12 +91,14 @@ public class ReservationDao {
                 "total_price,"+
                 "guest_count,"+
                 "guest_name,"+
+                "adult_count,"+
+                "child_count,"+
                 "guest_citizen_id,"+
                 "guest_mail,"+
                 "guest_phone,"+
                 "check_out_date"+
                 ")"+
-                "VALUES (?,?,?,?,?,?,?,?,?)";
+                "VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 
         try{
             PreparedStatement pr = connection.prepareStatement(query);
@@ -106,10 +108,12 @@ public class ReservationDao {
             pr.setDouble(3,reservation.getTotal_price());
             pr.setInt(4,reservation.getGuest_count());
             pr.setString(5,reservation.getGuest_name());
-            pr.setString(6,reservation.getGuest_citizen_id());
-            pr.setString(7,reservation.getGuest_mail());
-            pr.setString(8,reservation.getGuest_phone());
-            pr.setDate(9,Date.valueOf(reservation.getCheck_out_date()));
+            pr.setInt(6,reservation.getAdult_count());
+            pr.setInt(7,reservation.getChild_count());
+            pr.setString(8,reservation.getGuest_citizen_id());
+            pr.setString(9,reservation.getGuest_mail());
+            pr.setString(10,reservation.getGuest_phone());
+            pr.setDate(11,Date.valueOf(reservation.getCheck_out_date()));
 
             return  pr.executeUpdate() != -1;
         } catch (SQLException throwables) {
