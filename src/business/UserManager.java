@@ -33,12 +33,12 @@ public class UserManager {
 
     }
 
-    // Tüm kullanıcıları getiren metot
+
     public ArrayList<User> findAll() {
         return this.userDao.findAll();
     }
 
-    // Kullanıcı kaydını veritabanına ekleyen metot
+
     public boolean save(User user) {
         if (this.getById(user.getId()) != null) {
             Helper.showMsg("error");
@@ -47,7 +47,7 @@ public class UserManager {
         return this.userDao.save(user);
     }
 
-    // Kullanıcı bilgilerini güncelleyen metot
+
     public boolean update(User user) {
         if (this.getById(user.getId()) == null) {
             Helper.showMsg(user.getId() + " ID kayıtlı model bulunamadı");
@@ -56,7 +56,7 @@ public class UserManager {
         return this.userDao.update(user);
     }
 
-    // Belirli bir ID'ye sahip kullanıcıyı getiren metot
+
     public User getById(int id) {
         return this.userDao.getByID(id);
     }
@@ -70,7 +70,7 @@ public class UserManager {
         return this.userDao.delete(id);
     }
 
-    // Rolüne göre kullanıcıları arayan metot
+
     public ArrayList<User> searchForTable(String role) {
         String select = "SELECT * FROM public.user";
         ArrayList<String> whereList = new ArrayList<>();
