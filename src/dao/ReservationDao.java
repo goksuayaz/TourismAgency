@@ -154,41 +154,32 @@ public class ReservationDao {
         return reservationList;
     }
 
-    public boolean update(Reservation reservation){
-        try{
+    public boolean update(Reservation reservation) {
+        try {
             String query = "UPDATE public.reservation SET " +
-                    "room_id = ?,"+
-                    "check_in_date = ?," +
-                    "total_price = ?,"+
-                    "guest_count = ?,"+
-                    "guest_name = ?,"+
-                    "guest_citizen_id = ?,"+
-                    "guest_mail = ?,"+
-                    "guest_phone = ?,"+
-                    "adult_count = ?,"+
-                    "child_count = ?,"+
-                    "check_out_date = ?"+
+                    "guest_name = ?," +
+                    "guest_citizen_id = ?," +
+                    "guest_mail = ?," +
+                    "guest_phone = ? " + // Boşluk eklenmeli
                     "WHERE id = ?";
 
             PreparedStatement pr = connection.prepareStatement(query);
-            pr.setInt(1,reservation.getRoom_id());
-            pr.setDate(2,Date.valueOf(reservation.getCheck_in_date()));
-            pr.setDouble(3,reservation.getTotal_price());
-            pr.setInt(4,reservation.getGuest_count());
-            pr.setString(5,reservation.getGuest_name());
-            pr.setString(6,reservation.getGuest_citizen_id());
-            pr.setString(7,reservation.getGuest_mail());
-            pr.setString(8,reservation.getGuest_phone());
-            pr.setDate(9,Date.valueOf(reservation.getCheck_out_date()));
-            pr.setInt(10,reservation.getId());
-            pr.setInt(11,reservation.getAdult_count());
-            pr.setInt(12,reservation.getChild_count());
 
-            return pr.executeUpdate() != -1;
-        }catch (SQLException throwables){
+            pr.setString(1, reservation.getGuest_name());
+            pr.setString(2, reservation.getGuest_citizen_id());
+            pr.setString(3, reservation.getGuest_mail());
+            pr.setString(4, reservation.getGuest_phone());
+            pr.setInt(5, reservation.getId());
+
+            // executeUpdate() metodu sorgu başarılıysa etkilenen satır sayısını döndürür
+            int affectedRows = pr.executeUpdate();
+
+            // Etkilenen satır sayısı 0'dan büyükse güncelleme başarılı olmuştur
+            return affectedRows > 0;
+        } catch (SQLException throwables) {
             throwables.printStackTrace();
+            return false; // Hata durumunda false döndür
         }
-        return true;
     }
 
 }

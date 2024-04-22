@@ -125,14 +125,14 @@ public class UpdateReservationView extends Layout {
             } else {
                 boolean result;
 
-                // SEÇİLEN REZERVASYON KONTROL ET //
+
 
                 this.reservation.setGuest_citizen_id(this.tf_res_guess_id_no.getText());
                 this.reservation.setGuest_name(this.tf_res_guess_name.getText());
                 this.reservation.setGuest_mail(this.tf_res_guess_mail.getText());
                 this.reservation.setGuest_phone(this.tf_res_guess_tel_no.getText());
 
-                // GÜNCELLEME İŞLEMİNİ GERÇEKLEŞTİRİR.
+
 
 
                 if (this.reservation.getId() != 0) {
