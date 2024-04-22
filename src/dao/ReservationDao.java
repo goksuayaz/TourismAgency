@@ -165,6 +165,8 @@ public class ReservationDao {
                     "guest_citizen_id = ?,"+
                     "guest_mail = ?,"+
                     "guest_phone = ?,"+
+                    "adult_count = ?,"+
+                    "child_count = ?,"+
                     "check_out_date = ?"+
                     "WHERE id = ?";
 
@@ -179,6 +181,8 @@ public class ReservationDao {
             pr.setString(8,reservation.getGuest_phone());
             pr.setDate(9,Date.valueOf(reservation.getCheck_out_date()));
             pr.setInt(10,reservation.getId());
+            pr.setInt(11,reservation.getAdult_count());
+            pr.setInt(12,reservation.getChild_count());
 
             return pr.executeUpdate() != -1;
         }catch (SQLException throwables){
