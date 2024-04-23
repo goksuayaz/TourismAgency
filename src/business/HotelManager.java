@@ -10,15 +10,19 @@ public class HotelManager {
 
     HotelDao hotelDao = new HotelDao();
 
+    //Method that returns the hotel with a specific ID
     public Hotel getById(int id){
         return this.hotelDao.getById(id);
 
     }
 
+    //Method to get all hotels
     public ArrayList<Hotel> findAll(){
         return this.hotelDao.findAll();
     }
 
+
+    //Method that provides the necessary information for the table
     public ArrayList<Object[]> getForTable(int size,ArrayList<Hotel> hotels){
         ArrayList<Object[]> hotelList = new ArrayList<>();
         for(Hotel obj : hotels){
@@ -42,6 +46,7 @@ public class HotelManager {
         return hotelList;
     }
 
+    //Method that adds the hotel save to the database
     public boolean save(Hotel hotel){
         if(hotel.getHotel_id() != 0){
             Helper.showMsg("error");
@@ -49,6 +54,7 @@ public class HotelManager {
         return this.hotelDao.save(hotel);
     }
 
+    //Method that deletes the hotel with a specific ID
     public boolean delete(int id){
         if(this.getById(id) == null){
             Helper.showMsg(id + " ID model not found.");
@@ -57,6 +63,8 @@ public class HotelManager {
         return this.hotelDao.delete(id);
     }
 
+
+    //Method that updates hotel information
     public boolean update(Hotel hotel){
         if(this.getById(hotel.getHotel_id()) == null){
             Helper.showMsg(hotel.getHotel_id() + "ID model not found.");

@@ -105,8 +105,8 @@ public class UpdateRoomView extends Layout {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                ComboItem selectedOtelItem = (ComboItem) cmb_room_add_hotel.getSelectedItem();
-                int selectedOtelId = selectedOtelItem.getKey();
+                ComboItem selectedHotelItem = (ComboItem) cmb_room_add_hotel.getSelectedItem();
+                int selectedHotelId = selectedHotelItem.getKey();
                 ArrayList<Pension> pensions = pensionManager.getPensionByHotelId(((ComboItem) cmb_room_add_hotel.getSelectedItem()).getKey());
                 System.out.println("Pension: " + pensions);
                 cmb_pension_add.removeAllItems();

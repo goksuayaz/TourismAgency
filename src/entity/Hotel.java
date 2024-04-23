@@ -57,6 +57,7 @@ public class Hotel {
         Pension pension = new Pension();
     }
 
+    //Getter and Setter
     public int getHotel_id() {
         return hotel_id;
     }

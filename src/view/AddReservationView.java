@@ -87,6 +87,7 @@ public class AddReservationView extends Layout {
 
 
 
+        //Populate GUI components
         this.tf_res_hotel_name.setText(this.room.getHotel().getHotel_name());
         this.tf_res_city.setText(this.room.getHotel().getHotel_adress());
         this.tf_res_star.setText(this.room.getHotel().getHotel_star());
@@ -119,7 +120,10 @@ public class AddReservationView extends Layout {
             }else{
                 boolean result;
 
-                // Rezervasyon bilgilerini atama
+
+
+                //Assign reservation information
+
                 this.reservation.setTotal_price(Double.parseDouble(this.tf_res_total_amount.getText()));
                 this.reservation.setGuest_count(Integer.parseInt(this.tf_res_total_guest_number.getText()));
                 this.reservation.setGuest_name(this.tf_res_guess_name.getText());
@@ -134,7 +138,7 @@ public class AddReservationView extends Layout {
                 if (result){
                     Helper.showMsg("done");
 
-                   // this.roomManager.getById(this.room.setStock(this.room.getStock()-1));
+                   //this.roomManager.getById(this.room.setStock(this.room.getStock()-1));
                     this.roomManager.updateStock(this.room);
                     dispose();
                 }else {

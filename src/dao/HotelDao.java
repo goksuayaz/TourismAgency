@@ -17,6 +17,8 @@ public class HotelDao {
         this.connection = Database.getInstance();
     }
 
+
+    //Method that returns the hotel with a specific ID
     public Hotel getById(int id){
         Hotel obj = null;
         String query = "SELECT * FROM public.hotel WHERE hotel_id = ? ";
@@ -34,6 +36,7 @@ public class HotelDao {
         return obj;
     }
 
+    // Method that maps ResultSet to Hotel object
     public Hotel match(ResultSet rs) throws SQLException{
         Hotel obj = new Hotel();
         obj.setHotel_id(rs.getInt("hotel_id"));
@@ -53,6 +56,7 @@ public class HotelDao {
         return obj;
     }
 
+    //Method to get all hotels
     public ArrayList<Hotel> findAll(){
         ArrayList<Hotel> hotelList = new ArrayList<>();
         String sql = "SELECT * FROM public.hotel";
@@ -69,6 +73,7 @@ public class HotelDao {
         return hotelList;
     }
 
+    //Method that adds hotel
     public boolean save(Hotel hotel){
         String query = "INSERT INTO public.hotel " +
                 "(" +
@@ -108,6 +113,8 @@ public class HotelDao {
         return true;
     }
 
+
+    // Method to delete hotel
     public boolean delete(int model_id){
         try{
             String query = "DELETE FROM public.hotel WHERE hotel_id = ?";
@@ -120,6 +127,8 @@ public class HotelDao {
         return true;
     }
 
+
+    //Method to update the hotel
     public boolean update(Hotel hotel){
         try {
             String query = "UPDATE public.hotel SET " +
