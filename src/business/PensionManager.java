@@ -44,7 +44,7 @@ public class PensionManager {
 
     public boolean update(Pension pension){
         if(this.getById(pension.getId()) == null){
-            Helper.showMsg(pension.getId() + "ID kayıtlı model bulunamadı");
+            Helper.showMsg(pension.getId() + "ID model not found");
             return false;
         }
 
@@ -53,7 +53,7 @@ public class PensionManager {
 
     public boolean delete(int id){
         if(this.getById(id) == null){
-            Helper.showMsg(id + " ID kayıtlı model bulunamadı.");
+            Helper.showMsg(id + " ID model not found.");
             return false;
         }
 

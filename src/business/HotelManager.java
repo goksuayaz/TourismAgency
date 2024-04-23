@@ -51,7 +51,7 @@ public class HotelManager {
 
     public boolean delete(int id){
         if(this.getById(id) == null){
-            Helper.showMsg(id + " ID kayıtlı model bulunamadı");
+            Helper.showMsg(id + " ID model not found.");
             return false;
         }
         return this.hotelDao.delete(id);
@@ -59,7 +59,7 @@ public class HotelManager {
 
     public boolean update(Hotel hotel){
         if(this.getById(hotel.getHotel_id()) == null){
-            Helper.showMsg(hotel.getHotel_id() + "ID kayıtlı model bulunamadı");
+            Helper.showMsg(hotel.getHotel_id() + "ID model not found.");
             return false;
         }
         return this.hotelDao.update(hotel);

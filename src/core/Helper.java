@@ -9,17 +9,14 @@ public class Helper {
         String msg;
         String title = switch (str) {
             case "fill" -> {
-                // Tüm alanları doldurun mesajı
                 msg = "Please fill in all fields.";
                 yield "Error!";
             }
             case "done" -> {
-                // Başarılı mesajı
                 msg = "Successful";
                 yield "Result";
             }
             case "notFound" -> {
-                // Bulunamadı mesajı
                 msg = str + " Not found!";
                 yield "Not found.";
             }
@@ -38,7 +35,7 @@ public class Helper {
     public static boolean confirm(String str){
         String msg;
         if(str.equals("Sure")){
-            // İşlemi yapmak istediğinizden emin misiniz? mesajı
+
             msg = "Are you sure you want to do this action ?";
         }else{
             msg = str;
@@ -47,12 +44,12 @@ public class Helper {
     }
 
 
-    // JTextField'ın boş olup olmadığını kontrol eden metot
+
     public static boolean isFieldEmpty(JTextField field) {
         return field.getText().trim().isEmpty();
     }
 
-    // JTextField dizisinin boş olup olmadığını kontrol eden metot
+
     public static boolean isFieldListEmpty(JTextField[] fieldList) {
         for (JTextField field : fieldList) {
             if (isFieldEmpty(field)) return true;
@@ -60,9 +57,8 @@ public class Helper {
         return false;
     }
 
-    // Pencerenin konumunu ayarlayan metot
+
     public static int getLocationPoint(String type, Dimension size) {
-        // Pencere tipine göre konum belirle
         return switch (type) {
             case "x" -> (Toolkit.getDefaultToolkit().getScreenSize().width - size.width) / 2;
             case "y" -> (Toolkit.getDefaultToolkit().getScreenSize().height - size.height) / 2;

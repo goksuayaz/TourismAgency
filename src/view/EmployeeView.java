@@ -128,7 +128,7 @@ public class EmployeeView extends Layout {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JTextField[] roomJTextField = new JTextField[]{tf_numb_adult_room, tf_numb_children_room};
-                if (Helper.isFieldListEmpty(roomJTextField)) {// Filtreleme aşamasında çocuk veya yetişkin sayısını girmezse hata mesajı ver
+                if (Helper.isFieldListEmpty(roomJTextField)) {
                     Helper.showMsg("Please enter the number of children and adults");
                 }else {
                     int selectedAdult = Integer.parseInt(tf_numb_adult_room.getText());

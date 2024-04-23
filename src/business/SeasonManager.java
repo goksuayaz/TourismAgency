@@ -48,7 +48,7 @@ public class SeasonManager {
 
     public boolean delete(int id){
     if(this.getById(id) == null){
-        Helper.showMsg(id + " ID kayıtlı model bulunamadı.");
+        Helper.showMsg(id + " ID model not found.");
         return false;
     }
     return this.seasonDao.delete(id);

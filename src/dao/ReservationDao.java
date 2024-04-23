@@ -160,7 +160,7 @@ public class ReservationDao {
                     "guest_name = ?," +
                     "guest_citizen_id = ?," +
                     "guest_mail = ?," +
-                    "guest_phone = ? " + // Boşluk eklenmeli
+                    "guest_phone = ? " +
                     "WHERE id = ?";
 
             PreparedStatement pr = connection.prepareStatement(query);
@@ -171,14 +171,14 @@ public class ReservationDao {
             pr.setString(4, reservation.getGuest_phone());
             pr.setInt(5, reservation.getId());
 
-            // executeUpdate() metodu sorgu başarılıysa etkilenen satır sayısını döndürür
+
             int affectedRows = pr.executeUpdate();
 
-            // Etkilenen satır sayısı 0'dan büyükse güncelleme başarılı olmuştur
+
             return affectedRows > 0;
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-            return false; // Hata durumunda false döndür
+            return false;
         }
     }
 
