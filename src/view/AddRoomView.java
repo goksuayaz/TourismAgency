@@ -120,8 +120,6 @@ public class AddRoomView extends Layout {
                     }
                     if(result){
                         Helper.showMsg("done");
-                        /*employeeView.loadReservationTable();*/
-
                         dispose();
                     }else{
                         Helper.showMsg("error");
@@ -129,7 +127,6 @@ public class AddRoomView extends Layout {
                 }
 
                 }
-            //}
         });
     }
 

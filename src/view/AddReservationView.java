@@ -138,7 +138,7 @@ public class AddReservationView extends Layout {
                 if (result){
                     Helper.showMsg("done");
 
-                   //this.roomManager.getById(this.room.setStock(this.room.getStock()-1));
+                    this.room.setStock(this.room.getStock() - 1);
                     this.roomManager.updateStock(this.room);
                     dispose();
                 }else {
