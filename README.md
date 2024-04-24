@@ -1,6 +1,13 @@
 Patika Tourism Agency
 Graduation Project
 
+![loginview](https://github.com/goksuayaz/TourismAgency.java/assets/159562162/07c41bc2-44ba-4385-8cb1-b84d795b694e)
+![adminvieww](https://github.com/goksuayaz/TourismAgency.java/assets/159562162/f239acdb-d8e8-400e-9271-f206e3ecf22a)
+![roomview](https://github.com/goksuayaz/TourismAgency.java/assets/159562162/ffe9bfd3-0141-406b-abd4-aed6a6dbe254)
+![resview](https://github.com/goksuayaz/TourismAgency.java/assets/159562162/9ee458b8-8535-42d7-8c5a-e9d632b055f8)
+
+
+
 This project includes software developed to manage Patika Tourism Agency's business in a digital environment. Below are the project details and technical requirements.
 
 Project Description
